@@ -1,0 +1,112 @@
+<div
+  *ngIf="(user$ | async)?.token"
+  class="d-flex flex-column flex-shrink-0 p-3 bg-light h-100"
+  style="width: 280px"
+>
+  <a
+    routerLink="/"
+    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+  >
+    <svg class="bi pe-none me-2" width="40" height="32">
+      <use xlink:href="#bootstrap"></use>
+    </svg>
+    <span class="fs-4">
+      <svg viewBox="0 0 128 128" style="width: 36px">
+        <path
+          fill="#B3B3B3"
+          d="M63.81 1.026L4.553 21.88l9.363 77.637 49.957 27.457 50.214-27.828 9.36-77.635z"
+        ></path>
+        <path
+          fill="#A6120D"
+          d="M117.536 25.998L63.672 7.629v112.785l45.141-24.983z"
+        ></path>
+        <path
+          fill="#DD1B16"
+          d="M11.201 26.329l8.026 69.434 44.444 24.651V7.627z"
+        ></path>
+        <path
+          fill="#F2F2F2"
+          d="M78.499 67.67l-14.827 6.934H48.044l-7.347 18.374-13.663.254 36.638-81.508L78.499 67.67zm-1.434-3.491L63.77 37.858 52.864 63.726h10.807l13.394.453z"
+        ></path>
+        <path
+          fill="#B3B3B3"
+          d="M63.671 11.724l.098 26.134 12.375 25.888H63.698l-.027 10.841 17.209.017 8.042 18.63 13.074.242z"
+        ></path>
+      </svg>
+
+      App
+    </span>
+  </a>
+  <hr />
+  <ul ngbNav class="nav nav-pills flex-column mb-auto">
+    <li ngbNavItem class="nav-item">
+      <a ngbNavLink routerLink="/" class="nav-link" aria-current="page">
+        <svg class="bi pe-none me-2" width="16" height="16">
+          <use xlink:href="#home"></use>
+        </svg>
+        Home
+      </a>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink routerLink="/settings" class="nav-link">
+        <svg class="bi pe-none me-2" width="16" height="16">
+          <use xlink:href="#speedometer2"></use>
+        </svg>
+        Configurações
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link">
+        <svg class="bi pe-none me-2" width="16" height="16">
+          <use xlink:href="#table"></use>
+        </svg>
+        Orders
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">
+        <svg class="bi pe-none me-2" width="16" height="16">
+          <use xlink:href="#grid"></use>
+        </svg>
+        Products
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">
+        <svg class="bi pe-none me-2" width="16" height="16">
+          <use xlink:href="#people-circle"></use>
+        </svg>
+        Customers
+      </a>
+    </li>
+  </ul>
+  <hr />
+  <div ngbDropdown class="dropdown">
+    <a
+      href="#"
+      class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+      data-bs-toggle="dropdown"
+      ngbDropdownToggle
+      aria-expanded="false"
+    >
+      <strong>user@email.com</strong>
+    </a>
+    <ul ngbDropdownMenu class="dropdown-menu text-small shadow">
+      <li ngbDropdownItem>
+        <a class="dropdown-item" href="#">New project...</a>
+      </li>
+      <li ngbDropdownItem><a class="dropdown-item" href="#">Settings</a></li>
+      <li ngbDropdownItem><a class="dropdown-item" href="#">Profile</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li ngbDropdownItem>
+        <a
+          routerLink="/auth"
+          class="dropdown-item"
+          href="#"
+          (click)="deslogar()"
+          >Sign out</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
